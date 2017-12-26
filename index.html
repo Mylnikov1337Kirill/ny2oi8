@@ -7,30 +7,133 @@
     <title>С НГ</title>
     <style>
         html, body {
-            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            min-width: 380px;
+            overflow-x: hidden;
             background: black;
             color: red;
+            font-family: 'Comic Sans MS', sans-serif;
         }
-        marquee {
-            height: 100%;
+
+        body {
+            margin-bottom: 30px;
         }
+
+        @font-face {
+            font-family: 'Comic Sans MS';
+            src: url(comic.ttf);
+        }
+
         h2 {
             height: 100%;
         }
+
+        #greeting {
+            color: white;
+            font-size: 22px;
+        }
+
+        a {
+            padding-top: 15px;
+            color: white;
+            font-size: 18px;
+            display: block;
+        }
+
+        @keyframes ded-rotation {
+            0% {
+                margin-bottom: 0;
+            }
+            50% {
+                margin-bottom: 20px;
+            }
+            75% {
+                margin-top: 20px;
+            }
+            100% {
+                margin-top: 0;
+            }
+        }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://www.fortress-design.com/js/snow-fall.js" type="text/javascript"></script>
 </head>
 <body>
-    <div style="width: 800px; margin: 0 auto">
-        <marquee behavior="alternate">
-            <h2 style="font-family: 'Comic Sans MS', sans-serif; font-size: 72px; text-align: center;">С НовЫм ГоДом</h2>
-        </marquee>
-    </div>
-    <div style="width: 800px; margin: 0 auto;">
-        <img src="./ded.png" alt="" style="margin: 0 auto">
-    </div>
-    <audio autoplay>
-        <source src="http://theatrefenix.narod.ru/N_Y/Music/Novogodnyaya.mp3" type="audio/mpeg"> Your browser does not support the audio element.
-    </audio>
-    <script src="http://www.fortress-design.com/js/snow-fall.js" type="text/javascript"></script>
+<div style="width: 90%; margin: 0 5%;">
+    <marquee behavior="alternate">
+        <h2 style=" font-size: 72px; text-align: center;">С Н0вЫм ГоДоМ</h2>
+    </marquee>
+</div>
+<div style="margin: 30px 5% 20px;">
+    <span id="greeting"></span> </br>
+    <a href="http://translate.yandex.ru/">ПеРеВеДенО сЕрВиСоМ "Яндекс.Переводчик"</a>
+</div>
+<div style="width: 90%; max-width: 800px; margin: 0 auto;height: auto;">
+    <img src="./ded.png" alt="" style="margin: 0 auto; width: 100%;animation: ded-rotation 4s linear infinite;">
+</div>
+<span style="padding-top: 20px; display: block;text-align: center;">А джава так умеет???77</span>
+<audio autoplay>
+    <source src="http://theatrefenix.narod.ru/N_Y/Music/Novogodnyaya.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    var GREETINGS_LIST = [
+        'We are at the ending point of this year. Just thought I should thank everyone who made me smile. You are of them so here goes… thank you and a very happy new year!',
+        'Whenever I think of the New Year, I always think about you. Even if we are miles apart, you are always wished well and prayed for. Have a great new year!',
+        'May God bless you and keep you protected and in good health so that you can witness many more such new years’! But first of all, enjoy this one and stay happy!',
+        'Even though life presented to you various obstacles and hurdles, be proud that you managed to overcome all and cross the bridge to another new year. May you continue to be this firm and win over all shortcomings!',
+        'May this New Year brings you a peace filled life, warmth and togetherness in your family and much prosperity! Happy New Year!',
+        'Celebrate this New Year with lots of fireworks and welcome it with a blast! Enjoy your time with friends and family.',
+        'Hold the smile, let the tear go, keep the laugh, lose the pain, look for joy, and abandon the fear.  Happy New Year dear!',
+        'Life is an accessible diary filled with empty pages waiting for you. Fill them up with your story as you go.',
+        'May all the expectations and goals for each day be fulfilled on the day itself!',
+        'Let this New Year give you all the strength and courage to win over your vices and enhance your virtues.',
+        'Wish you have a year even better than the best and put smiles on the faces of everyone you come across.',
+        'Have a year as fragrant as roses, as brilliant as the sun, as colorful as the rainbow and as cheerful as the lark. Happy New Year!',
+        'Open your eyes, look at the bright day awaiting you, forget all bad dreams and start afresh. Wishing you a wonderful New Year!',
+        'Beauty, hopes, dreams, trust, faith, celebration, freshness… this is the starting of a New Year!',
+        'When the New Year arrives, it brings with it new ideas and ways to make our lives good to better and ultimately better to best.',
+        'My New Year’s resolution is to avoid meeting people who ask me about my New Year resolutions.',
+        'New are the hopes and aspirations, new are the resolutions, new are the spirits and new is the year! Here’s wishing that you be embraced with a glorious one and meet all your future endeavors with victory and triumph.',
+        'A promising and a fulfilling new year is waiting just for you. Open your arms and behold it with grace and mirth. Hope you have prosperous one.',
+        'May this New Year find you on the table surrounded by your cherish family and beloved friends! Have good food, drink well and ring in the New Year in high spirits.',
+        'Wish that your days be plated in gold, encrusted with diamonds, sparkled with silver dust and spent in good company. Enjoy the New Year as well as the days following.',
+        'Even if we don’t talk to each other much nowadays, even if we are caught up in our respective lives, I will always wish well for you. Happy New Year!',
+        'No matter what happens, however far we may be, my prayers and wishes for you will never fall short. Stay happy for his year and all the years to come.',
+        'Your smile speaks volume to me, your voice sing to me, your eyes convey to me and all that you do is special for me. This is because you are the dearest to me and here’s wishing you a fabulous New Year!',
+        'Just like hot chocolate is incomplete without marshmallows, I am insufficient without you. So complete me this New Year and fill my life with unlimited happiness.',
+        'May this New Year equip you with good luck, good health, good fortune and good times! Happy New Year!',
+        'I hope that the lamps of joy lighten up your year, fill your days with sparkles of joy, and brighten up your life forever and ever.',
+        'You have overcome yet another year. With every oncoming year, come greater obstacles in life. So be brave and I hope you overcome all the struggles that life presents you with. Stay strong!',
+        'Counting my blessing and greeting you more. I wish you enjoy this New Year and it doesn’t make you bore. As we take a step further in life, hope love and happiness is all that God pours! May you have a wonderful new year!',
+        'May your New Year be spent in pomp and splendor and the upcoming year in love and peace! Happy New Year!',
+        'I wish this New Year provides you enough reasons to be happy and you have uncountable days filled with joy and mirth!',
+        'Say hello to a brand new year and a new chance to set everything right!',
+        'People look forward to a new year to start afresh and turn over a new leaf. All the best for that and have a wonderful year ahead!',
+        'Ten, nine, eight, seven, six, five, four, three, two, one, hurrah! Its New Year already! Enjoy loads and have a great time ahead.'
+    ];
+    var API_KEY = 'trnsl.1.1.20171226T105655Z.d9d942aa0e866a03.d17b959170a996ce46b86fd666c729ed0abcf43f';
+    var greeting_c0nta1n3r = $('#greeting');
+    var s0me_r4nd0m_shit = GREETINGS_LIST[Math.floor(Math.random() * GREETINGS_LIST.length)];
+
+    function translate() {
+        $.ajax({
+            url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' + API_KEY + '&text=' + s0me_r4nd0m_shit + '&lang=ru',
+            type: 'GET',
+            dataType: 'JSON'
+        }).done(function (success) {
+                greeting_c0nta1n3r.text(success.text[0]);
+            })
+            .fail(function () {
+                translate();
+            })
+    }
+
+    translate();
+</script>
 </body>
 </html>
